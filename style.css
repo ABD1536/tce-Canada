@@ -2310,28 +2310,6 @@ nav { flex: 1; }
   transform: scale(1.05);
 }
 
-/* Specific visibility fix for white XM brand logo */
-.brand-logo-item img[src*="Xm"],
-.brand-logo-item img[src*="xm"],
-.brand-logo-item img[alt="XM"] {
-  mix-blend-mode: normal !important;
-  filter: brightness(0) opacity(0.8) !important;
-  transition: opacity 0.2s ease, transform 0.2s ease !important;
-  height: 36px !important;
-  width: auto !important;
-  object-fit: contain !important;
-}
-
-.brand-logo-item img[src*="Xm"]:hover,
-.brand-logo-item img[src*="xm"]:hover,
-.brand-logo-item img[alt="XM"]:hover,
-.brand-logo-item:hover img[src*="Xm"],
-.brand-logo-item:hover img[src*="xm"],
-.brand-logo-item:hover img[alt="XM"] {
-  mix-blend-mode: normal !important;
-  filter: brightness(0) opacity(1) !important;
-  transform: scale(1.05) !important;
-}
 
 @media (max-width: 768px) {
   .brand-logo-item {
