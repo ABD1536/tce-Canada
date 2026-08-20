@@ -379,4 +379,31 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 7. Hero Video Continuous Loop & Playback Lock
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.play().catch(() => {});
+    
+    heroVideo.addEventListener('pause', () => {
+      heroVideo.play().catch(() => {});
+    });
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const vid = document.querySelector('.hero-video');
+  if (vid) {
+    vid.muted = true;
+    vid.defaultMuted = true;
+    const playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Fallback retry on user touch/scroll
+        document.body.addEventListener('touchstart', () => vid.play(), { once: true });
+        document.body.addEventListener('click', () => vid.play(), { once: true });
+      });
+    }
+  }
 });
